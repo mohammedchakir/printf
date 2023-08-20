@@ -166,4 +166,4 @@ All the above options work well together.
 -----------------
 ## Collaborators:
 
-[OMATAYO IKUDAYISI](https://github.com/Glitzzybetty) & [MOHAMMED CHAKIR](https://github.com/mohammedchakir)
+[OMOTAYO IKUDAYISI](https://github.com/Glitzzybetty) & [MOHAMMED CHAKIR](https://github.com/mohammedchakir)
