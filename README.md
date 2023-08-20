@@ -41,7 +41,7 @@ There should be one project repository per group. The other members do not fork 
 
 ## TASKS:
 
-#### [0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life]()
+#### [0. I'm not going anywhere. You can print that wherever you want to. I'm here and I'm a Spur for life](0_printf.c)
 
 Write a function that produces output according to a format.
 
@@ -58,7 +58,7 @@ Write a function that produces output according to a format.
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
 
-#### [1. Education is when you read the fine print. Experience is what you get if you don't]()
+#### [1. Education is when you read the fine print. Experience is what you get if you don't](1_functions.c)
 
 Handle the following conversion specifiers:
 
@@ -69,13 +69,13 @@ Handle the following conversion specifiers:
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
 
-#### [2. With a face like mine, I do better in print]()
+#### [2. With a face like mine, I do better in print](2_functions.c)
 
 Handle the following custom conversion specifiers:
 
 - b: the unsigned int argument is converted to binary
 
-#### [3. What one has not experienced, one will never understand in print]()
+#### [3. What one has not experienced, one will never understand in print](3_functions.c)
 
 Handle the following conversion specifiers:
 
@@ -88,18 +88,18 @@ Handle the following conversion specifiers:
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
 
-#### [4. Nothing in fine print is ever good news]()
+#### [4. Nothing in fine print is ever good news](4_get_flags.c)
 
 - Use a local buffer of 1024 chars in order to call write as little as possible
 
-#### [5. My weakness is wearing too much leopard print]()
+#### [5. My weakness is wearing too much leopard print](5_get_size.c)
 
 Handle the following custom conversion specifier:
 
 - S : prints the string.
 - Non printable characters (0 < ASCII value < 32 or >= 127) are printed this way: \x, followed by the ASCII code value in hexadecimal (upper case - always 2 characters)
 
-#### [6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print]()
+#### [6. How is the world ruled and led to war? Diplomats lie to journalists and believe these lies when they see them in print](6_get_precision.c)
 
 Handle the following conversion specifier: p.
 
@@ -108,7 +108,7 @@ Handle the following conversion specifier: p.
 - You don’t have to handle precision
 - You don’t have to handle the length modifiers
 
-#### [7. The big print gives and the small print takes away]()
+#### [7. The big print gives and the small print takes away](7_get_width.c)
 
 Handle the following flag characters for non-custom conversion specifiers:
 
@@ -116,7 +116,7 @@ Handle the following flag characters for non-custom conversion specifiers:
 - space
 - #
 
- #### [8. Sarcasm is lost in print]()
+ #### [8. Sarcasm is lost in print](8_handle_print.c)
 
 Handle the following length modifiers for non-custom conversion specifiers:
 
@@ -124,11 +124,11 @@ Handle the following length modifiers for non-custom conversion specifiers:
 - h
 - Conversion specifiers to handle: d, i, u, o, x, X
 
-#### [9. Print some money and give it to us for the rain forests]()
+#### [9. Print some money and give it to us for the rain forests](9_utils.c)
 
 Handle the field width for non-custom conversion specifiers.
 
-#### [10. The negative is the equivalent of the composer's score, and the print the performance]()
+#### [10. The negative is the equivalent of the composer's score, and the print the performance](10_write_handlers.c)
 
 Handle the precision for non-custom conversion specifiers.
 
