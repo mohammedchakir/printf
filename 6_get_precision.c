@@ -2,29 +2,30 @@
 
 /**
  * get_precision - gets the precision from the format string
- * @s: the format string
- * @params: the parameters struct
- * @ap: the argument pointer
- * Return: new pointer
+ * @format: the format string
+ * @i: pointer to the current index in the format string
+ * @list: the argument list
+ * Return: new index value
 */
-
-char *get_precision(char *s, params_t *params, va_list ap)
+int get_precision(const char *format, int *i, va_list list)
 {
-	int d = 0;
+	int precision = 0;
 
-	if (*s != '.')
-		return (s);
-	s++;
-	if (*s == '*')
+	if (format[*i] != '.')
+		return (*i);
+
+	(*i)++;
+
+	if (format[*i] == '*')
 	{
-		d = va_arg(ap, int);
-		s++;
+		precision = va_arg(list, int);
+		(*i)++;
 	}
 	else
 	{
-		while (_isdigit(*s))
-			d = d * 10 + (*s++ - '0');
+		while (_isdigit(format[*i]))
+			precision = precision * 10 + (format[(*i)++] - '0');
 	}
-	params->precision = d;
-	return (s);
+
+	return (*i);
 }
