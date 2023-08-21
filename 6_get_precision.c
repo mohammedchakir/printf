@@ -1,41 +1,51 @@
 #include "main.h"
 
-/**
- * get_precision - Calculates the precision for printing
- * @format: Formatted string in which to print the arguments
- * @i: List of arguments to be printed.
- * @list: list of arguments.
- * Return: Precision.
- */
 
+/**
+ * get_precision - Matches a precision modifier with
+ *                    its corresponding value.
+ * @format: The format string.
+ * @i: A pointer to the current index in the format string.
+ * @list: A va_list of arguments.
+ *
+ * Return: If a precision modifier is matched - its value.
+ *         If the precision modifier is empty, zero, or negative - 0.
+ *         Otherwise - -1.
+ */
 int get_precision(const char *format, int *i, va_list list)
 {
-	int curr_i = *i + 1;
-	int precision = -1;
+	int value = 0;
 
-	if (format[curr_i] != '.')
-		return (precision);
+	if (format[*i] != '.')
+		return (-1);
 
-	precision = 0;
+	(*i)++;
 
-	for (curr_i += 1; format[curr_i] != '\0'; curr_i++)
+	if ((format[*i] <= '0' || format[*i] > '9') &&
+			format[*i] != '*')
 	{
-		if (is_digit(format[curr_i]))
-		{
-			precision *= 10;
-			precision += format[curr_i] - '0';
-		}
-		else if (format[curr_i] == '*')
-		{
-			curr_i++;
-			precision = va_arg(list, int);
-			break;
-		}
-		else
-			break;
+		if (format[*i] == '0')
+			(*i)++;
+		return (0);
 	}
 
-	*i = curr_i - 1;
+	while ((format[*i] >= '0' && format[*i] <= '9') ||
+			(format[*i] == '*'))
+	{
+		(*i)++;
 
-	return (precision);
+		if (format[*i] == '*')
+		{
+			value = va_arg(list, int);
+			if (value <= 0)
+				return (0);
+			return (value);
+		}
+
+		value *= 10;
+		value += (format[*i] - '0');
+		(*i)++;
+	}
+
+	return (value);
 }
