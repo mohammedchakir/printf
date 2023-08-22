@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdio.h>
+#include <stdarg.h>
 
 /**
  * get_precision - Calculates the precision for printing
@@ -34,10 +36,23 @@ int get_precision(const char *format, int *i, va_list list)
 			break;
 	}
 
-	if (precision == 0)
-		precision = -1;
-
 	*i = curr_i - 1;
 
 	return (precision);
+}
+
+int main(void)
+{
+	const char *test_format = "This is a test %.2f string";
+	va_list args;
+
+	va_start(args, test_format);
+
+	int index = 13;
+	int precision = get_precision(test_format, &index, args);
+
+	printf("Precision: %d\n", precision);
+	va_end(args);
+
+	return (0);
 }
