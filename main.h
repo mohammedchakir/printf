@@ -105,7 +105,7 @@ int flags, int width, int precision, int size);
 
 int is_printable(char);
 int append_hexa_code(char, char[], int);
-int is_digit(char);
+int _digit(char);
 
 long int convert_size_number(long int num, int size);
 long int convert_size_unsgnd(unsigned long int num, int size);
