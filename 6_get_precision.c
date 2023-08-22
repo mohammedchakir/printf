@@ -7,23 +7,24 @@
  * @ap: the argument pointer
  * Return: new pointer
 */
-int get_precision(const char *format, int *i, va_list list)
+
+char *get_precision(char *s, params_t *params, va_list ap)
 {
 	int d = 0;
 
-	if (*format != '.')
-		return (format);
-	format++;
-	if (*format == '*')
+	if (*s != '.')
+		return (s);
+	s++;
+	if (*s == '*')
 	{
 		d = va_arg(ap, int);
-		format++;
+		s++;
 	}
 	else
 	{
-		while (_isdigit(*format))
-			d = d * 10 + (*format++ - '0');
+		while (_isdigit(*s))
+			d = d * 10 + (*s++ - '0');
 	}
-	format->precision = d;
-	return (format);
+	params->precision = d;
+	return (s);
 }
