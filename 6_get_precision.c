@@ -40,19 +40,3 @@ int get_precision(const char *format, int *i, va_list list)
 
 	return (precision);
 }
-
-int main(void)
-{
-	const char *test_format = "This is a test %.2f string";
-	va_list args;
-
-	va_start(args, test_format);
-
-	int index = 13;
-	int precision = get_precision(test_format, &index, args);
-
-	printf("Precision: %d\n", precision);
-	va_end(args);
-
-	return (0);
-}
