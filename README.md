@@ -36,8 +36,9 @@ There should be one project repository per group. The other members do not fork 
    - `va_arg (man 3 va_arg)`
 
 ## Compilation:
-
-`$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c`
+```
+$ gcc -Wall -Werror -Wextra -pedantic -std=gnu89 *.c
+```
 
 ## TASKS:
 
@@ -111,12 +112,11 @@ Handle the following conversion specifier: p.
 #### [7. The big print gives and the small print takes away](7_get_width.c)
 
 Handle the following flag characters for non-custom conversion specifiers:
+- `+`
+- `space`
+- `#`
 
-- +
-- space
-- #
-
- #### [8. Sarcasm is lost in print](8_handle_print.c)
+#### [8. Sarcasm is lost in print](8_handle_print.c)
 
 Handle the following length modifiers for non-custom conversion specifiers:
 
